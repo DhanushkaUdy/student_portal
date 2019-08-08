@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, withRouter} from "react-router-dom";
+import {Link, withRouter} from 'react-router-dom';
 
 class Navbar extends Component {
 
@@ -18,7 +18,7 @@ class Navbar extends Component {
                         <h1><img src="https://img.icons8.com/color/50/000000/login-rounded-right.png"/>Login</h1>
                    </Link>
                </li>
-               <li className="nav-items">
+               <li className="nav-tabs">
                    <Link to="/register" className="nav-link">
                        <h1><img src="https://img.icons8.com/offices/16/000000/registered-trademark.png"/>Register</h1>
                    </Link>
@@ -54,15 +54,15 @@ class Navbar extends Component {
        return(
            <nav className="navbar navbar-expand-md navbar-light rounded">
                <button
-                    className="navbar-toggle"
+                    className="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
                     data-target="#navbar1"
-                    aria-controls="navbar1"
+                    aria-controls="#navbar1"
                     aria-expanded="false"
                     aria-label="toggle navigation">
 
-                   <span className="navbar-toogler-icon"/>
+                   <span className="navbar-toggler-icon"/>
                </button>
                <div className="collapse navbar-collapse justify-content-md-center" id='navbar1'>
                    <ul className='nav nav-tabs'>
