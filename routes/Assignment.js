@@ -1,10 +1,10 @@
 const express = require('express');
-const assignmentRoutes = express.Route();
+const assignmentRoutes = express.Router();
 
 const Assignment = require('../models/Assingment');
 
 assignmentRoutes.route('/add').post(function (res, req){
-    let assignment = new Assignment(res.body);
+    let assignment = new Assignment(req.body);
     assignment.save()
         .then( assignment => {
             res.status(200).json({'assignment': 'Successfully Assignment Added'});
@@ -32,4 +32,4 @@ assignmentRoutes.route('/delete/:id').get(function (res, req){
     });
 });
 
-model.export = assignmentRoutes;
+module.exports = assignmentRoutes;

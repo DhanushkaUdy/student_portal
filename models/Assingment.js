@@ -1,4 +1,4 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let Assignment = new Schema({
@@ -15,4 +15,4 @@ let Assignment = new Schema({
     collection : 'assignment'
 });
 
-module.exports = mongoose.module('Assignment', Assignment);
+module.exports = mongoose.model('Assignment', Assignment);

@@ -7,11 +7,11 @@ const mongoose = require('mongoose'); //Object Mapping between Node and MongoDB 
 const path = require('path'); //The Path module provides a way of working with directories and file paths.
 const cors = require('cors'); //Cross-Origin Resources Sharing (CORS) is a security protocol implemented by browsers. Cross Origin Resource Sharing CORS in Node.
 
-const assignmentRoutes = require('./routes/Assignment');
+var assignmentRoutes = require('./routes/Assignment');
 
 var app = express();
 
-const post = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json);
 app.use(cors());
@@ -22,7 +22,7 @@ app.use(
     })
 );
 
-app.use('/assignments', assignmentRoutes);
+app.use('/assignment', assignmentRoutes);
 
 // file upload initialize
 app.use(fileUpload());
@@ -61,10 +61,11 @@ mongoose
 
 
 var Users = require('./routes/Users');
-app.use('./users', Users);
+//app.use('/users', Users);
+
 
 //server Listening
 app.listen(port, ()=>{
-    console.log("server is listening on port" + port);
+    console.log("server is listening on port " + port);
 });
 
